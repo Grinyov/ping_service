@@ -1,17 +1,18 @@
 package com.grinyov.pingutil.dao.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * Created by grinyov
  */
 @Data
+@Entity
 public class Ping {
 
+    @Id
     private Long id;
     private String address;
     private String time;
