@@ -1,23 +1,38 @@
 package com.grinyov.pingutil.dao.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 
 
 /**
- * Created by grinyov
+ * Created by vgrinyov
  */
 @Data
+@NoArgsConstructor
 @Entity
 public class Ping {
 
     @Id
+    @GeneratedValue
     private Long id;
+    @Column(nullable = false)
     private String address;
+    @Column(nullable = false)
     private String time;
 
-//    public static void main(String[] args) throws UnknownHostException, IOException {
+
+    public Ping(String address, String time) {
+        this.address = address;
+        this.time = time;
+    }
+
+    //    public static void main(String[] args) throws UnknownHostException, IOException {
 //        String ipAddress = "127.0.0.1";
 //        InetAddress inet = InetAddress.getByName(ipAddress);
 //

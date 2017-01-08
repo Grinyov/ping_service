@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by grinyov
+ * Created by vgrinyov
  */
 @RestController
 @RequestMapping(value = "/api")
