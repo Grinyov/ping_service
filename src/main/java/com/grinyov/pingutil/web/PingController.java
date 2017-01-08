@@ -13,12 +13,14 @@ import java.util.List;
  * Created by grinyov
  */
 @RestController
-@RequestMapping("/api/pinglist")
+@RequestMapping(value = "/api")
 public class PingController {
 
     @Autowired
     private PingRepository pingRepository;
 
+
+    @RequestMapping(value = "/list")
     public List<Ping> getPingList(){
         return pingRepository.findAll();
     }
