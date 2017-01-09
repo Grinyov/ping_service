@@ -12,4 +12,7 @@ public class MainController {
     public String show() {
         return "index";
     }
+
+    @RequestMapping("/pings")
+    public String pings(){return "pinglist";}
 }
