@@ -20,21 +20,21 @@ public class PingServiceImpl implements PingService {
     @Autowired
     private PingRepository pingRepository;
 
-//     private static List<Ping> pings = new ArrayList<>();
-//
-//     static{
-//         pings.add(new Ping("localhost", "0"));
-//         pings.add(new Ping("ya.ru", "0"));
-//         pings.add(new Ping("mail.ru", "0"));
-//         pings.add(new Ping("google.com", "0"));
-//
-//     }
-//
-//
-//    @PostConstruct
-//    public void init() {
-//        pingRepository.save(pings);
-//    }
+     private static List<Ping> pings = new ArrayList<>();
+
+     static{
+         pings.add(new Ping("localhost", "0"));
+         pings.add(new Ping("ya.ru", "0"));
+         pings.add(new Ping("mail.ru", "0"));
+         pings.add(new Ping("google.com", "0"));
+
+     }
+
+
+    @PostConstruct
+    public void init() {
+        pingRepository.save(pings);
+    }
 
 
     @Override

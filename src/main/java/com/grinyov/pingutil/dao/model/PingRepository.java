@@ -10,5 +10,5 @@ import java.util.List;
  */
 @Repository
 public interface PingRepository extends JpaRepository<Ping, Long>{
-    List<Ping> findByPingAddress(String address);
+    //List<Ping> findByPingAddress(String address);
 }

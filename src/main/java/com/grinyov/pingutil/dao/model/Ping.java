@@ -1,13 +1,10 @@
 package com.grinyov.pingutil.dao.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+
+import javax.persistence.*;
 
 
 /**
@@ -16,6 +13,7 @@ import javax.persistence.GeneratedValue;
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name = "pings")
 public class Ping {
 
     @Id
