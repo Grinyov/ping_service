@@ -41,4 +41,8 @@ public class PingServiceImpl implements PingService {
     public List<Ping> findAll() {
         return pingRepository.findAll();
     }
+
+
+
+
 }
