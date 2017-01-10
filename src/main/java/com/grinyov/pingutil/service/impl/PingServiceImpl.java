@@ -1,5 +1,6 @@
 package com.grinyov.pingutil.service.impl;
 
+import com.google.common.collect.ImmutableList;
 import com.grinyov.pingutil.dao.model.Ping;
 import com.grinyov.pingutil.dao.model.PingRepository;
 import com.grinyov.pingutil.service.PingService;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Created by vgrinyov.
@@ -39,10 +43,8 @@ public class PingServiceImpl implements PingService {
 
     @Override
     public List<Ping> findAll() {
-        return pingRepository.findAll();
+        return pingRepository.findAll().stream()
+                .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
-
-
-
 
 }

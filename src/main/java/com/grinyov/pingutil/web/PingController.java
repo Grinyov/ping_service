@@ -16,14 +16,14 @@ import java.util.List;
 @RequestMapping(value = "/api")
 public class PingController {
 
-//    @Autowired
-//    private PingService pingService;
+    @Autowired
+    private PingService pingService;
     @Autowired
     private PingRepository pingRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Ping> getPingList(){
-        return pingRepository.findAll();
+        return pingService.findAll();
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
