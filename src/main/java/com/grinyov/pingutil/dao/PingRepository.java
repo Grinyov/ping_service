@@ -1,5 +1,6 @@
-package com.grinyov.pingutil.dao.model;
+package com.grinyov.pingutil.dao;
 
+import com.grinyov.pingutil.dao.model.Ping;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

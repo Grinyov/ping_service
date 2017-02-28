@@ -1,12 +1,11 @@
 package com.grinyov.pingutil.web;
 
 import com.grinyov.pingutil.dao.model.Ping;
-import com.grinyov.pingutil.dao.model.PingRepository;
+import com.grinyov.pingutil.dao.PingRepository;
 import com.grinyov.pingutil.service.PingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/api")
-public class PingController {
+public class PingRestController {
 
     @Autowired
     private PingService pingService;

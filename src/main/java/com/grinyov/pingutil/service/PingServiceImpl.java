@@ -1,11 +1,10 @@
-package com.grinyov.pingutil.service.impl;
+package com.grinyov.pingutil.service;
 
 import com.google.common.collect.ImmutableList;
 import com.grinyov.pingutil.dao.model.Ping;
-import com.grinyov.pingutil.dao.model.PingRepository;
+import com.grinyov.pingutil.dao.PingRepository;
 import com.grinyov.pingutil.service.PingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
