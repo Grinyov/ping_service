@@ -21,13 +21,11 @@ public class Ping {
     private Long id;
     @Column(nullable = false)
     private String address;
-    @Column(nullable = false)
-    private String time;
+
 
 
     public Ping(String address, String time) {
         this.address = address;
-        this.time = time;
     }
 
     //    public static void main(String[] args) throws UnknownHostException, IOException {
