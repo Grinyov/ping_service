@@ -24,7 +24,7 @@ public class Ping {
 
 
 
-    public Ping(String address, String time) {
+    public Ping(String address) {
         this.address = address;
     }
 

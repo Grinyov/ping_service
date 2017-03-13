@@ -26,10 +26,10 @@ public class PingServiceImpl implements PingService {
      private static List<Ping> pings = new ArrayList<>();
 
      static{
-         pings.add(new Ping("localhost", "0"));
-         pings.add(new Ping("ya.ru", "0"));
-         pings.add(new Ping("mail.ru", "0"));
-         pings.add(new Ping("google.com", "0"));
+         pings.add(new Ping("localhost"));
+         pings.add(new Ping("ya.ru"));
+         pings.add(new Ping("mail.ru"));
+         pings.add(new Ping("google.com"));
 
      }
 

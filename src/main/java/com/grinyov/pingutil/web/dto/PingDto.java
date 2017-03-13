@@ -9,9 +9,10 @@ import java.net.InetAddress;
 public class PingDto{
     private long id;
     private String address;
-    private String timeResponce;
+    private String timeResponse;
 
     public PingDto(InetAddress address){
         this.address = address.toString();
+
     }
 }

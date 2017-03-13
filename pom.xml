@@ -72,6 +72,13 @@
             <version>1.16.12</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>icmp4j</groupId>
+            <artifactId>org.icmp4j</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/icmp4j-all.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
