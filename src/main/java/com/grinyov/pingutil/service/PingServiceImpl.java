@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class PingServiceImpl implements PingService {
 
     @Autowired
     private PingRepository pingRepository;
+
+     private static long countDbObjects;
 
      private static List<Ping> pings = new ArrayList<>();
 
@@ -46,4 +50,9 @@ public class PingServiceImpl implements PingService {
                 .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
 
+    public String getDelay(String host){
+
+
+         return "dummy";
+    }
 }
