@@ -1,15 +1,12 @@
 package com.grinyov.pingutil.service;
 
 import com.google.common.collect.ImmutableList;
-import com.grinyov.pingutil.dao.model.Ping;
+import com.grinyov.pingutil.dao.model.Host;
 import com.grinyov.pingutil.dao.PingRepository;
-import com.grinyov.pingutil.service.PingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.IOException;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,25 +24,25 @@ public class PingServiceImpl implements PingService {
 
      private static long countDbObjects;
 
-     private static List<Ping> pings = new ArrayList<>();
+     private static List<Host> hosts = new ArrayList<>();
 
      static{
-         pings.add(new Ping("localhost"));
-         pings.add(new Ping("ya.ru"));
-         pings.add(new Ping("mail.ru"));
-         pings.add(new Ping("google.com"));
+         hosts.add(new Host("localhost"));
+         hosts.add(new Host("ya.ru"));
+         hosts.add(new Host("mail.ru"));
+         hosts.add(new Host("google.com"));
 
      }
 
 
     @PostConstruct
     public void init() {
-        pingRepository.save(pings);
+        pingRepository.save(hosts);
     }
 
 
     @Override
-    public List<Ping> findAll() {
+    public List<Host> findAll() {
         return pingRepository.findAll().stream()
                 .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
