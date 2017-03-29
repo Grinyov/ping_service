@@ -6,12 +6,12 @@ import java.net.InetAddress;
 /**
  * Created by vgrinyov.
  */
-public class PingDto{
+public class HostDto {
     private long id;
     private String address;
     private String timeResponse;
 
-    public PingDto(InetAddress address){
+    public HostDto(InetAddress address){
         this.address = address.toString();
 
     }
