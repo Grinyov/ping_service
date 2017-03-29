@@ -3,6 +3,8 @@ package com.grinyov.pingutil.web;
 import com.grinyov.pingutil.dao.model.Host;
 import com.grinyov.pingutil.dao.HostRepository;
 import com.grinyov.pingutil.service.HostService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api")
 public class HostRestController {
+
+    private final Logger logger = LoggerFactory.getLogger(HostRestController.class);
 
     @Autowired
     private HostService hostService;

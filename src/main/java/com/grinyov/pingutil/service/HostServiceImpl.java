@@ -3,6 +3,8 @@ package com.grinyov.pingutil.service;
 import com.google.common.collect.ImmutableList;
 import com.grinyov.pingutil.dao.model.Host;
 import com.grinyov.pingutil.dao.HostRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,8 @@ import static java.util.stream.Collectors.toList;
  */
 @Service
 public class HostServiceImpl implements HostService {
+
+    private final Logger logger = LoggerFactory.getLogger(HostServiceImpl.class);
 
     @Autowired
     private HostRepository hostRepository;
