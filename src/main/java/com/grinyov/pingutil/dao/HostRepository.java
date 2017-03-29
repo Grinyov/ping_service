@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by vgrinyov
  */
 @Repository
-public interface PingRepository extends JpaRepository<Host, Long>{
+public interface HostRepository extends JpaRepository<Host, Long>{
     //List<Host> findByPingAddress(String address);
 }

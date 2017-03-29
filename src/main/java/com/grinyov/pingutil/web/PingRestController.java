@@ -1,7 +1,7 @@
 package com.grinyov.pingutil.web;
 
 import com.grinyov.pingutil.dao.model.Host;
-import com.grinyov.pingutil.dao.PingRepository;
+import com.grinyov.pingutil.dao.HostRepository;
 import com.grinyov.pingutil.service.PingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class PingRestController {
     @Autowired
     private PingService pingService;
     @Autowired
-    private PingRepository pingRepository;
+    private HostRepository hostRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Host> getPingList(){
@@ -27,13 +27,13 @@ public class PingRestController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public List<Host> create(@RequestBody Host host){
-        pingRepository.save(host);
-        return pingRepository.findAll();
+        hostRepository.save(host);
+        return hostRepository.findAll();
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public List<Host> delete(@PathVariable long id){
-        pingRepository.delete(id);
-        return pingRepository.findAll();
+        hostRepository.delete(id);
+        return hostRepository.findAll();
     }
 }

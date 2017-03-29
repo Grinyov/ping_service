@@ -2,7 +2,7 @@ package com.grinyov.pingutil.service;
 
 import com.google.common.collect.ImmutableList;
 import com.grinyov.pingutil.dao.model.Host;
-import com.grinyov.pingutil.dao.PingRepository;
+import com.grinyov.pingutil.dao.HostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ import static java.util.stream.Collectors.toList;
 public class PingServiceImpl implements PingService {
 
     @Autowired
-    private PingRepository pingRepository;
+    private HostRepository hostRepository;
 
      private static long countDbObjects;
 
@@ -37,13 +37,13 @@ public class PingServiceImpl implements PingService {
 
     @PostConstruct
     public void init() {
-        pingRepository.save(hosts);
+        hostRepository.save(hosts);
     }
 
 
     @Override
     public List<Host> findAll() {
-        return pingRepository.findAll().stream()
+        return hostRepository.findAll().stream()
                 .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
 
