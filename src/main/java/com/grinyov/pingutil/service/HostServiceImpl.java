@@ -38,4 +38,12 @@ public class HostServiceImpl implements HostService {
         return hosts.stream()
                 .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
+
+    @Override
+    public String echo(String input) {
+        if ("FAIL".equals(input)) {
+            throw new RuntimeException("Unavailable host");
+        }
+        return "echo:" + input;
+    }
 }

@@ -11,4 +11,6 @@ public interface HostService {
 
     List<Host> findAll();
 
+    String echo(String input);
+
 }
