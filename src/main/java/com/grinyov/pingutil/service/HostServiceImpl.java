@@ -26,8 +26,6 @@ public class HostServiceImpl implements HostService {
     @Autowired
     private HostRepository hostRepository;
 
-     private static long countDbObjects;
-
      private static List<Host> hosts = new ArrayList<>();
 
      static{
@@ -47,13 +45,14 @@ public class HostServiceImpl implements HostService {
 
     @Override
     public List<Host> findAll() {
-        return hostRepository.findAll().stream()
+
+        logger.debug("getCurrencies()");
+
+        List<Host> hosts = hostRepository.findAll();
+
+        logger.debug("Returning list of {} hosts from database", hosts.size());
+
+        return hosts.stream()
                 .collect(collectingAndThen(toList(), ImmutableList::copyOf));
-    }
-
-    public String getDelay(String host){
-
-
-         return "dummy";
     }
 }
