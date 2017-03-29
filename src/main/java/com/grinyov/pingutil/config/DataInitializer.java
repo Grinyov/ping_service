@@ -2,16 +2,12 @@ package com.grinyov.pingutil.config;
 
 import com.grinyov.pingutil.dao.HostRepository;
 import com.grinyov.pingutil.dao.model.Host;
-import com.grinyov.pingutil.service.HostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
