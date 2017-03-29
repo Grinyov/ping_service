@@ -26,27 +26,10 @@ public class HostServiceImpl implements HostService {
     @Autowired
     private HostRepository hostRepository;
 
-     private static List<Host> hosts = new ArrayList<>();
-
-     static{
-         hosts.add(new Host("localhost"));
-         hosts.add(new Host("ya.ru"));
-         hosts.add(new Host("mail.ru"));
-         hosts.add(new Host("google.com"));
-
-     }
-
-
-    @PostConstruct
-    public void init() {
-        hostRepository.save(hosts);
-    }
-
-
     @Override
     public List<Host> findAll() {
 
-        logger.debug("getCurrencies()");
+        logger.debug("getHosts()");
 
         List<Host> hosts = hostRepository.findAll();
 
