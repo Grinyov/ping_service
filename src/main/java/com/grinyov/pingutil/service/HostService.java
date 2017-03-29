@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by vgrinyov.
  */
-public interface PingService {
+public interface HostService {
 
     List<Host> findAll();
 

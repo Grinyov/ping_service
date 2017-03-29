@@ -2,7 +2,7 @@ package com.grinyov.pingutil.web;
 
 import com.grinyov.pingutil.dao.model.Host;
 import com.grinyov.pingutil.dao.HostRepository;
-import com.grinyov.pingutil.service.PingService;
+import com.grinyov.pingutil.service.HostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,16 +13,16 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/api")
-public class PingRestController {
+public class HostRestController {
 
     @Autowired
-    private PingService pingService;
+    private HostService hostService;
     @Autowired
     private HostRepository hostRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Host> getPingList(){
-        return pingService.findAll();
+        return hostService.findAll();
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)

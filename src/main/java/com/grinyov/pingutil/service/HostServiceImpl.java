@@ -17,7 +17,7 @@ import static java.util.stream.Collectors.toList;
  * Created by vgrinyov.
  */
 @Service
-public class PingServiceImpl implements PingService {
+public class HostServiceImpl implements HostService {
 
     @Autowired
     private HostRepository hostRepository;

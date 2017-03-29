@@ -1,7 +1,7 @@
 package com.grinyov.pingutil.config;
 
 import com.grinyov.pingutil.dao.HostRepository;
-import com.grinyov.pingutil.service.PingService;
+import com.grinyov.pingutil.service.HostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import javax.annotation.PreDestroy;
 public class DataInitializer {
 
     @Autowired
-    private PingService pingService;
+    private HostService hostService;
 
     @Autowired
     private HostRepository hostRepository;
