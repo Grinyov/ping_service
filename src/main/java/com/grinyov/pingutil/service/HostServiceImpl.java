@@ -43,25 +43,12 @@ public class HostServiceImpl implements HostService {
     @Override
     public String echo(String host, int port, int timeout) {
 
-//        try {
-//            InetAddress address = InetAddress.getByName(host);
-//            long timer = -System.currentTimeMillis();
-//            boolean reachable = address.isReachable(10000);
-//            timer += System.currentTimeMillis();
-//            if (reachable)
-//                {return "" + timer;}
-//            else {return "unreachable";}
-//        }
-//        catch (IOException e) {
-//            return "unreachable"; // Either timeout or unreachable or failed DNS lookup.
-//        }
         try{
-            //InetAddress address = InetAddress.getByName("google.com");
             InetAddress address = InetAddress.getByName(host);
             long timer = -System.currentTimeMillis();
             boolean reachable = address.isReachable(10000);
             timer += System.currentTimeMillis();
-            return " " + timer + " ms";
+            return " " + timer;
         } catch (Exception e){
             return "unreachable"; // Either timeout or unreachable or failed DNS lookup.
         }
