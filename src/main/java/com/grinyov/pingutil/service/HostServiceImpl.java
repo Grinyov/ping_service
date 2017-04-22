@@ -41,7 +41,7 @@ public class HostServiceImpl implements HostService {
     }
 
     @Override
-    public String echo(String host, int port, int timeout) {
+    public String echo(String host) {
 
         try{
             InetAddress address = InetAddress.getByName(host);
