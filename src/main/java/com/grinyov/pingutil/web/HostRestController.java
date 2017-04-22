@@ -40,4 +40,11 @@ public class HostRestController {
         hostRepository.delete(id);
         return hostRepository.findAll();
     }
+
+    @RequestMapping(value = "/echo/{host}", method = RequestMethod.GET)
+    public String echo(@PathVariable String host){
+        String delay;
+        delay = "" + hostService.echo(host, 7, 1000);
+        return delay;
+    }
 }

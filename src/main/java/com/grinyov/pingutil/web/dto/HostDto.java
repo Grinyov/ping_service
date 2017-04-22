@@ -13,6 +13,5 @@ public class HostDto {
 
     public HostDto(InetAddress address){
         this.address = address.toString();
-
     }
 }

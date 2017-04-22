@@ -11,6 +11,6 @@ public interface HostService {
 
     List<Host> findAll();
 
-    String echo(String input);
+    String echo(String host, int port, int timeout);
 
 }
